@@ -23,4 +23,4 @@ function subs(){su.innerHTML=S.filter(s=>s.category_id==ca.value).map(s=>`<optio
 async function add(){let o={name:n.value,e_number:en.value,manufacturer:br.value,subcategory_id:Number(su.value),image_url:im.value||null,manufacturer_url:mu.value||null,notes:no.value||null};let {error}=await db.from("products").insert(o);if(error){alert(error.message);return}modal.classList.add("hidden");await load();draw();alert("Produkten sparades i molnet!")}
 async function logout(){await db.auth.signOut();login()}
 boot();
-</script></body></html> 
+</script></body></html>
